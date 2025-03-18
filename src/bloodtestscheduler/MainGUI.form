@@ -47,37 +47,44 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
-                  <Component id="titleLBL" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="nameLBL" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="83" max="-2" attributes="0"/>
+                          <Component id="nameTF" min="-2" pref="179" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="GPDetailLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="priorityLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="ageLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="hospitalLBL" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="hospitalCheckBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="priorityComboBox" min="-2" max="-2" attributes="0"/>
+                              <Component id="ageTF" min="-2" max="-2" attributes="0"/>
+                              <Component id="GPDetailTF" min="-2" pref="181" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
               </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="ageLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="nameLBL" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="GPDetailLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="priorityLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="hospitalLBL" min="-2" max="-2" attributes="0"/>
-                  </Group>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="140" max="-2" attributes="0"/>
+                  <Component id="titleLBL" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="GPDetailTF" min="-2" pref="158" max="-2" attributes="0"/>
-                      <Component id="priorityComboBox" min="-2" max="-2" attributes="0"/>
-                      <Component id="nameTF" min="-2" pref="187" max="-2" attributes="0"/>
-                      <Component id="ageTF" min="-2" max="-2" attributes="0"/>
-                      <Component id="hospitalCheckBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   <Component id="addPatientBTN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="56" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                   <Component id="getNextBTN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace pref="49" max="32767" attributes="0"/>
                   <Component id="addNoShowBTN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,42 +94,37 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="titleLBL" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="nameLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="nameTF" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="nameTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="nameLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="ageLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="ageTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="ageLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="ageTF" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="priorityLBL" min="-2" max="-2" attributes="0"/>
-                      <Component id="priorityComboBox" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="GPDetailLBL" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="GPDetailTF" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="hospitalLBL" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                          <Component id="hospitalCheckBox" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="getNextBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="priorityLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="priorityComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="GPDetailLBL" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="GPDetailTF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="hospitalLBL" min="-2" max="-2" attributes="0"/>
+                      <Component id="hospitalCheckBox" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="45" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="addPatientBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="getNextBTN" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="addNoShowBTN" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
