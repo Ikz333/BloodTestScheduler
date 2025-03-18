@@ -1,7 +1,5 @@
 package bloodtestscheduler;
 
-
-import bloodtestscheduler.Patient;
 import java.util.Comparator;
 
 /*
@@ -13,7 +11,9 @@ import java.util.Comparator;
  *
  * @author ikram
  */
+
 public class PatientComparator implements Comparator<Patient> {
+    @Override
     public int compare(Patient p1, Patient p2) {
         // Compare by priority (urgent > medium > low)
         int priorityCompare = p1.getPriority().compareTo(p2.getPriority());

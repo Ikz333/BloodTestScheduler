@@ -30,10 +30,10 @@ public class MainGUI extends javax.swing.JFrame {
         titleLBL = new javax.swing.JLabel();
         nameLBL = new javax.swing.JLabel();
         nameTF = new javax.swing.JTextField();
-        ageLBL = new javax.swing.JLabel();
-        ageTF = new javax.swing.JTextField();
         GPDetailLBL = new javax.swing.JLabel();
         GPDetailTF = new javax.swing.JTextField();
+        ageLBL = new javax.swing.JLabel();
+        ageTF = new javax.swing.JTextField();
         priorityLBL = new javax.swing.JLabel();
         priorityComboBox = new javax.swing.JComboBox<>();
         hospitalLBL = new javax.swing.JLabel();
@@ -56,17 +56,17 @@ public class MainGUI extends javax.swing.JFrame {
         nameTF.setBackground(new java.awt.Color(51, 51, 51));
         nameTF.setForeground(new java.awt.Color(255, 255, 255));
 
-        ageLBL.setForeground(new java.awt.Color(255, 255, 255));
-        ageLBL.setText("Age:");
-
-        ageTF.setBackground(new java.awt.Color(51, 51, 51));
-        ageTF.setForeground(new java.awt.Color(255, 255, 255));
-
         GPDetailLBL.setForeground(new java.awt.Color(255, 255, 255));
         GPDetailLBL.setText("GP Details:");
 
         GPDetailTF.setBackground(new java.awt.Color(51, 51, 51));
         GPDetailTF.setForeground(new java.awt.Color(255, 255, 255));
+
+        ageLBL.setForeground(new java.awt.Color(255, 255, 255));
+        ageLBL.setText("Age:");
+
+        ageTF.setBackground(new java.awt.Color(51, 51, 51));
+        ageTF.setForeground(new java.awt.Color(255, 255, 255));
 
         priorityLBL.setForeground(new java.awt.Color(255, 255, 255));
         priorityLBL.setText("Priority:");
@@ -98,25 +98,32 @@ public class MainGUI extends javax.swing.JFrame {
         mainPNLLayout.setHorizontalGroup(
             mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mainPNLLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
                 .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(mainPNLLayout.createSequentialGroup()
+                        .addGap(68, 68, 68)
                         .addComponent(nameLBL)
                         .addGap(83, 83, 83)
                         .addComponent(nameTF, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(mainPNLLayout.createSequentialGroup()
-                        .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(GPDetailLBL)
-                            .addComponent(priorityLBL)
-                            .addComponent(ageLBL)
-                            .addComponent(hospitalLBL))
-                        .addGap(39, 39, 39)
+                        .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(mainPNLLayout.createSequentialGroup()
+                                .addGap(68, 68, 68)
+                                .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GPDetailLBL)
+                                    .addComponent(hospitalLBL))
+                                .addGap(39, 39, 39))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainPNLLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(ageLBL)
+                                    .addComponent(priorityLBL))
+                                .addGap(83, 83, 83)))
                         .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(hospitalCheckBox)
-                            .addComponent(priorityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GPDetailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(ageTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(GPDetailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(priorityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 95, Short.MAX_VALUE))
             .addGroup(mainPNLLayout.createSequentialGroup()
                 .addGap(140, 140, 140)
                 .addComponent(titleLBL)
@@ -141,13 +148,13 @@ public class MainGUI extends javax.swing.JFrame {
                     .addComponent(nameLBL))
                 .addGap(43, 43, 43)
                 .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ageLBL)
-                    .addComponent(ageTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49)
+                    .addComponent(priorityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priorityLBL))
+                .addGap(54, 54, 54)
                 .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(priorityLBL)
-                    .addComponent(priorityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                    .addComponent(ageTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ageLBL))
+                .addGap(58, 58, 58)
                 .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(GPDetailLBL)
                     .addComponent(GPDetailTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -155,7 +162,7 @@ public class MainGUI extends javax.swing.JFrame {
                 .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(hospitalLBL)
                     .addComponent(hospitalCheckBox))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPatientBTN)
                     .addComponent(getNextBTN)
