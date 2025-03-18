@@ -4,16 +4,20 @@
  */
 package bloodtestscheduler;
 
+import java.util.Stack;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ikram
  */
 public class MainGUI extends javax.swing.JFrame {
-
+private BloodTestScheduler scheduler;
     /**
      * Creates new form MainGUI
      */
     public MainGUI() {
+        scheduler = new BloodTestScheduler(); // Initialize in the constructor
         initComponents();
     }
 
@@ -48,6 +52,7 @@ public class MainGUI extends javax.swing.JFrame {
         mainPNL.setBackground(new java.awt.Color(65, 15, 15));
 
         titleLBL.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        titleLBL.setForeground(new java.awt.Color(255, 255, 255));
         titleLBL.setText("Blood Test Scheduler");
 
         nameLBL.setForeground(new java.awt.Color(255, 255, 255));
@@ -71,8 +76,8 @@ public class MainGUI extends javax.swing.JFrame {
         priorityLBL.setForeground(new java.awt.Color(255, 255, 255));
         priorityLBL.setText("Priority:");
 
-        priorityComboBox.setBackground(new java.awt.Color(51, 51, 51));
-        priorityComboBox.setForeground(new java.awt.Color(255, 255, 255));
+        priorityComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        priorityComboBox.setForeground(new java.awt.Color(0, 0, 0));
         priorityComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Urgent", "Medium", "Low" }));
 
         hospitalLBL.setForeground(new java.awt.Color(255, 255, 255));
@@ -84,14 +89,29 @@ public class MainGUI extends javax.swing.JFrame {
         addPatientBTN.setBackground(new java.awt.Color(51, 51, 51));
         addPatientBTN.setForeground(new java.awt.Color(255, 255, 255));
         addPatientBTN.setText("Add Patient");
+        addPatientBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPatientBTNActionPerformed(evt);
+            }
+        });
 
         getNextBTN.setBackground(new java.awt.Color(51, 51, 51));
         getNextBTN.setForeground(new java.awt.Color(255, 255, 255));
         getNextBTN.setText("Get Next Patient");
+        getNextBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                getNextBTNActionPerformed(evt);
+            }
+        });
 
         addNoShowBTN.setBackground(new java.awt.Color(51, 51, 51));
         addNoShowBTN.setForeground(new java.awt.Color(255, 255, 255));
         addNoShowBTN.setText("Add No-Show");
+        addNoShowBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addNoShowBTNActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout mainPNLLayout = new javax.swing.GroupLayout(mainPNL);
         mainPNL.setLayout(mainPNLLayout);
@@ -121,8 +141,9 @@ public class MainGUI extends javax.swing.JFrame {
                         .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(hospitalCheckBox)
                             .addComponent(GPDetailTF, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ageTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(priorityComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(mainPNLLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(ageTF, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(priorityComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addGap(0, 95, Short.MAX_VALUE))
             .addGroup(mainPNLLayout.createSequentialGroup()
                 .addGap(140, 140, 140)
@@ -183,6 +204,75 @@ public class MainGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void addPatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientBTNActionPerformed
+        // TODO add your handling code here:
+        // Get input values
+        String name = nameTF.getText();
+        String priority = (String) priorityComboBox.getSelectedItem();
+        int age = Integer.parseInt(ageTF.getText());
+        String gpDetails = GPDetailTF.getText();
+        boolean fromHospital = hospitalCheckBox.isSelected();
+
+        // Create a new Patient object
+        Patient patient = new Patient(name, priority, age, gpDetails, fromHospital);
+
+        // Add the patient to the scheduler
+        scheduler.addPatient(patient);
+
+        // Show confirmation message
+        JOptionPane.showMessageDialog(rootPane, "Patient added: " + name + "\n");
+
+        // Reset the input fields
+        nameTF.setText(""); // Clear the name text field
+        priorityComboBox.setSelectedItem("Urgent"); // Reset combo box to "Urgent"
+        ageTF.setText(""); // Clear the age text field
+        GPDetailTF.setText(""); // Clear the GP details text field
+        hospitalCheckBox.setSelected(false); // Uncheck the checkbox
+    }//GEN-LAST:event_addPatientBTNActionPerformed
+
+    private void getNextBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_getNextBTNActionPerformed
+        // TODO add your handling code here:
+        // Get the next patient from the scheduler
+        Patient nextPatient = scheduler.getNextPatient();
+
+        if (nextPatient != null) {
+            // Display the patient's details
+            String message = "Next Patient:\n"
+                    + "Name: " + nextPatient.getName() + "\n"
+                    + "Priority: " + nextPatient.getPriority() + "\n"
+                    + "Age: " + nextPatient.getAge() + "\n"
+                    + "GP Details: " + nextPatient.getGpDetails() + "\n"
+                    + "From Hospital: " + (nextPatient.isFromHospital() ? "Yes" : "No");
+            JOptionPane.showMessageDialog(rootPane, message);
+        } else {
+            // If no patients are in the queue
+            JOptionPane.showMessageDialog(rootPane, "No patients in the queue.");
+        }
+    }//GEN-LAST:event_getNextBTNActionPerformed
+
+    private void addNoShowBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNoShowBTNActionPerformed
+        // TODO add your handling code here:
+        // Get the next patient from the scheduler
+        Patient nextPatient = scheduler.getNextPatient();
+
+        if (nextPatient != null) {
+            // Add the patient to the no-show stack
+            scheduler.addNoShow(nextPatient);
+
+            // Display the last 5 no-shows
+            StringBuilder noShowsMessage = new StringBuilder("Last 5 No-Shows:\n");
+            Stack<Patient> noShowStack = scheduler.getNoShowStack();
+            for (Patient patient : noShowStack) {
+                noShowsMessage.append("- ").append(patient.getName()).append("\n");
+            }
+
+            JOptionPane.showMessageDialog(rootPane, noShowsMessage.toString());
+        } else {
+            // If no patients are in the queue
+            JOptionPane.showMessageDialog(rootPane, "No patients in the queue to mark as no-show.");
+        }
+    }//GEN-LAST:event_addNoShowBTNActionPerformed
 
     /**
      * @param args the command line arguments

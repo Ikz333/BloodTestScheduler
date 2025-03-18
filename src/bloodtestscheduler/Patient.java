@@ -10,7 +10,7 @@ package bloodtestscheduler;
  * @author ikram
  */
 
-public class Patient {
+public class Patient implements Prioritizable{
     private String name;
     private String priority; // urgent, medium, low
     private int age;
@@ -26,13 +26,14 @@ public class Patient {
         this.fromHospital = fromHospital;
     }
 
+     @Override
+    public String getPriority() { 
+        return priority; 
+    }
+    
     // Getters
     public String getName() { 
         return name; 
-    }
-    
-    public String getPriority() { 
-        return priority; 
     }
     
     public int getAge() { 

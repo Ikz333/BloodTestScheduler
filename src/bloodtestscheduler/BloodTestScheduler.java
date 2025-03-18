@@ -4,7 +4,7 @@
  */
 package bloodtestscheduler;
 
-import java.awt.List;
+import java.util.List;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Stack;
@@ -51,6 +51,11 @@ public class BloodTestScheduler {
         noShowStack.push(p);
     }
 
+    // Get the no-show stack
+    public Stack<Patient> getNoShowStack() {
+        return noShowStack;
+    }
+    
     // Display the last 5 no-shows using recursion
     public void displayNoShows(Stack<Patient> stack, int count) {
         if (stack.isEmpty() || count >= 5) {
